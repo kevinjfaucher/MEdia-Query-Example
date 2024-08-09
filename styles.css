@@ -1,0 +1,342 @@
+/* Importing the Open Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Basic reset and body styling */
+
+/* 
+
+Properties and Values
+
+    margin: 0;
+        This resets the margin for the <body> element to zero. 
+		By default, browsers apply their own styles to elements, 
+		which often includes some margin for the <body>. 
+		Resetting the margin to 0 ensures a consistent starting point for your layout, 
+		eliminating any unexpected spacing around the edges of the page.
+
+    font-family: 'Open Sans', sans-serif;
+        This sets the font family for the entire document.
+        'Open Sans': This is the primary font. The code assumes that 'Open Sans'
+		 has been imported via a <link> or @import statement from Google Fonts (as seen in your previous CSS code).
+        sans-serif: This is a fallback font. If for some reason 'Open Sans' 
+		cannot be loaded, the browser will use the default sans-serif font.
+
+    background-color: #e8f6f3;
+        This sets the background color of the entire page to a light teal color (#e8f6f3).
+		 This color is applied to the whole <body> element, giving the page a uniform background.
+
+*/
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #e8f6f3;
+}
+
+/* Container to center the content */
+/*
+Properties and Values
+
+    max-width: 800px;
+        This sets the maximum width of the .container element to 800 pixels.
+        If the viewport (the visible area of the web page) is narrower than 800 pixels, 
+		the container will shrink to fit the viewport width.
+        If the viewport is wider than 800 pixels, the container's 
+		width will not exceed 800 pixels, maintaining a fixed maximum width.
+
+    margin: auto;
+        This centers the .container element horizontally within its parent element.
+        The auto value for the margin property means the browser calculates the margin to 
+		equally distribute the space on the left and right sides, effectively centering the element.
+
+    padding: 20px;
+        This adds 20 pixels of padding inside the .container element on all sides (top, right, bottom, and left).
+        Padding is the space between the content of the element and its border. 
+		In this case, it provides some breathing room inside the 
+		container, ensuring the content doesn't touch the edges of the container.
+
+
+*/
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Main title styling */
+h1 {
+    font-size: 2em;
+    color: #004d40;
+    text-align: center;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+/* 
+Properties and Values
+
+    display: inline;
+        Inline Display: This property changes the display behavior 
+		of the list items from their default block-level display to inline.
+        Block vs. Inline: By default, <li> elements are block-level elements, 
+		meaning they take up the full width available and stack vertically. 
+		Setting display: inline; makes the list items behave like inline elements, 
+		meaning they will flow horizontally like text within a paragraph, 
+		rather than stacking on top of each other.
+        
+		Effect: 
+		This property ensures that the navigation links appear side by side in a horizontal line instead of stacking vertically.
+
+    margin-right: 15px;
+        Right Margin: This property adds a 15-pixel margin to the 
+		right side of each list item.
+        Spacing: 
+		This creates horizontal space between the list items, ensuring 
+		they are not too close to each other and improving readability and appearance.
+        Last Item: 
+		The last list item will still have this margin applied, 
+		but it won't affect the layout significantly since it is the end of the row.
+
+Why We Did This
+
+    Horizontal Navigation Menu:
+        Inline Display: Converting the list items to inline elements makes them align horizontally, which is a common requirement for navigation menus. This layout is typical for top or side navigation bars where links are displayed in a row.
+
+*/
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #00796b;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #00796b;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+}
+
+button.adopt-button {
+    border-radius: 20px;
+}
+
+button.donate-button {
+    border-radius: 10px;
+}
+
+/* Secondary title styling */
+h2 {
+    color: #004d40;
+    text-align: center;
+}
+
+/* Welcome section styling */
+.welcome {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.welcome p {
+    color: #004d40;
+    line-height: 1.6;
+}
+
+/* Footer styling */
+footer {
+    background-color: #00796b;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: #e8f6f3;
+}
+
+footer a {
+    text-decoration: none;
+    color: #e8f6f3;
+    margin: 0 10px;
+}
+
+#links {
+    float: right;
+    margin-right: 20%;
+}
+
+/* Media Queries for responsiveness */
+
+/* Styles applied to screen sizes 768px and larger */
+@media only screen and (min-width: 768px) {
+
+
+	/* 
+	display: flex;
+
+    Flexbox Layout: This property enables the Flexbox layout model for the container.
+    Flexbox Benefits: Flexbox provides a more efficient way to lay out, align, 
+	and distribute space among items in a container, even when their size is unknown or dynamic.
+    Effect: All direct child elements of the 
+	.container will become flex items and will be arranged according to the flexbox rules.
+
+	flex-direction: column;
+
+    Column Direction: This property sets the main axis to be vertical, 
+	meaning the flex items (child elements of .container) 
+	will be arranged in a column from top to bottom.
+    
+	Effect: The flex items will stack vertically, one below the other.
+
+	align-items: center;
+
+    Center Alignment: This property aligns the flex items along the cross axis 
+	(the horizontal axis in this case, since flex-direction is column).
+    Effect: All flex items will be centered horizontally within the container.
+	
+	
+	*/
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+	/* 
+	display: flex;
+
+    Flexbox Layout: This property enables the Flexbox layout model for the .welcome element.
+    Flexbox Benefits: Flexbox provides a more efficient way to lay out, align, 
+	and distribute space among items in a container, even when their size is unknown or dynamic.
+    
+	Effect: 
+	All direct child elements of the .welcome element will become flex items and will be arranged according to the flexbox rules.
+
+	flex-direction: column;
+
+    Column Direction: This property sets the main axis to be vertical, 
+	meaning the flex items (child elements of .welcome) will be arranged in a column from top to bottom.
+    Effect: The flex items will stack vertically, one below the other.
+	This is because the .welcome class will apply flexbox properties specifically to its own direct children, 
+	regardless of its parent container's properties.
+
+	align-items: center;
+    Center Alignment: This property aligns the flex items along the cross axis (the horizontal axis in this case, since flex-direction is column).
+    Effect: All flex items will be centered horizontally within the .welcome container.
+	
+	*/
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Highlights section styling, only visible on larger screens */
+    /* 
+    Flexbox Layout (display: flex;)
+        To enable Flexbox, which provides a flexible 
+        and efficient way to arrange and align items.
+
+    Horizontal Spacing (justify-content: space-between;)
+        To distribute space evenly between child elements, 
+        placing the first item at the start and the last item at the end.
+
+    Vertical Centering (align-items: center;)
+        To center the child elements vertically within the container.
+
+    Vertical Margin (margin: 20px 0;)
+        To create space above and below the .highlights section, 
+        preventing it from being too close to other elements.
+
+    Full Width (width: 100%;)
+        To make the .highlights section 
+        span the entire width of its parent container.
+
+    Fixed Height (height: 300px;)
+        To ensure a consistent height for the section, 
+        regardless of its content, maintaining uniformity in the layout.
+    
+    */
+    .highlights {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        width: 100%;
+        height: 300px; /* Adjust height for larger screen */
+    }
+
+
+    /* 
+    
+    Properties and Values
+
+    display: inline-block;
+        Purpose: Allows the circles to sit next to each other horizontally 
+        while maintaining the ability to set width and height.
+        Effect: Combines the benefits of inline (flow with text) and block (width/height control) elements.
+
+    border-radius: 50%;
+        Purpose: Rounds the corners of the element to create a perfect circle.
+        Effect: Any element with equal width and height becomes circular.
+
+    width: 200px;
+        Purpose: Sets the fixed width of each circle.
+        Effect: Ensures each circle has a consistent size.
+
+    height: 200px;
+        Purpose: Sets the fixed height of each circle.
+        Effect: Ensures each circle has a consistent size.
+
+    margin: 0 10px;
+        Purpose: Adds horizontal space (10px) on the left and right of each circle.
+        Effect: Creates spacing between the circles when they are displayed side by side.
+    
+    
+    */
+    .circle {
+        display: inline-block;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin: 0 10px;
+    }
+
+    .circle1 {
+        background-color: rgba(247, 136, 167, 0.6);
+    }
+
+    .circle2 {
+        background-color: rgba(74, 203, 212, 0.6);
+    }
+
+    .circle3 {
+        background-color: rgba(95, 238, 190, 0.6);
+    }
+}
